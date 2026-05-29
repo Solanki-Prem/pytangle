@@ -79,8 +79,10 @@ ignore = ["S101"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S101", "S105", "S106"]
 # Typer's API *requires* calling typer.Option()/Argument() in parameter
-# defaults; B008 is a false positive for this idiom.
-"src/pytangle/cli.py" = ["B008"]
+# defaults; B008 is a false positive for this idiom. UP045 is suppressed
+# because Typer evaluates annotations at runtime via get_type_hints, and the
+# `X | None` form raises TypeError on Python 3.9 — so we must keep Optional[X].
+"src/pytangle/cli.py" = ["B008", "UP045"]
 
 [tool.pytest.ini_options]
 addopts = "-ra -q"

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Optional
 
 import typer
 from rich.console import Console
@@ -30,7 +31,7 @@ def _version_callback(value: bool) -> None:
 
 @app.callback()
 def main(
-    _version: bool | None = typer.Option(
+    _version: Optional[bool] = typer.Option(
         None,
         "--version",
         "-V",
@@ -47,7 +48,7 @@ def main(
 # --------------------------------------------------------------------------- #
 
 
-def _load_graph(lockfile: Path | None, path: Path) -> DependencyGraph:
+def _load_graph(lockfile: Optional[Path], path: Path) -> DependencyGraph:
     """Load a graph from an explicit lockfile, auto-discovery, or the env."""
     if lockfile is not None:
         if not lockfile.is_file():
@@ -84,7 +85,7 @@ def map(  # noqa: A001 - command name intentionally mirrors the verb
         "-o",
         help="Where to write the interactive HTML graph.",
     ),
-    lockfile: Path | None = typer.Option(
+    lockfile: Optional[Path] = typer.Option(
         None, "--lockfile", "-l", help="Parse a specific lockfile instead of the env."
     ),
     path: Path = typer.Option(
@@ -117,7 +118,7 @@ def map(  # noqa: A001 - command name intentionally mirrors the verb
 
 @app.command()
 def check(
-    lockfile: Path | None = typer.Option(
+    lockfile: Optional[Path] = typer.Option(
         None, "--lockfile", "-l", help="Parse a specific lockfile instead of the env."
     ),
     path: Path = typer.Option(
@@ -169,7 +170,7 @@ def check(
 
 @app.command()
 def suggest(
-    lockfile: Path | None = typer.Option(
+    lockfile: Optional[Path] = typer.Option(
         None, "--lockfile", "-l", help="Parse a specific lockfile instead of the env."
     ),
     path: Path = typer.Option(
