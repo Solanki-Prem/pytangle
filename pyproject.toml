@@ -53,9 +53,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Solanki-Prem/pytangle"
-Repository = "https://github.com/Solanki-Prem/pytangle"
-Issues = "https://github.com/Solanki-Prem/pytangle/issues"
+Homepage = "https://github.com/Solanki-Prem/deptangle"
+Repository = "https://github.com/Solanki-Prem/deptangle"
+Issues = "https://github.com/Solanki-Prem/deptangle/issues"
 
 [project.scripts]
 deptangle = "pytangle.cli:app"

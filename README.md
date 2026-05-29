@@ -1,12 +1,12 @@
-# 🧶 PyTangle
+# 🧶 deptangle
 
 > The lightning-fast, visual dependency detective that **untangles** and **fixes** your Python environments.
 
-[![CI](https://github.com/Solanki-Prem/pytangle/actions/workflows/ci.yml/badge.svg)](https://github.com/Solanki-Prem/pytangle/actions/workflows/ci.yml)
+[![CI](https://github.com/Solanki-Prem/deptangle/actions/workflows/ci.yml/badge.svg)](https://github.com/Solanki-Prem/deptangle/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org)
 
-PyTangle is a modern CLI that diagnoses **"dependency hell"** for Python
+deptangle is a modern CLI that diagnoses **"dependency hell"** for Python
 developers. It maps your dependency graph, scans for known CVEs via
 [OSV](https://osv.dev), flags outdated and yanked packages, and uses a
 constraint solver to suggest the **exact commands** to fix conflicts — powered
@@ -18,11 +18,11 @@ by [`uv`](https://github.com/astral-sh/uv) for speed.
 
 | | Feature | Command |
 |---|---|---|
-| 🩺 | **Environment diagnostics** — pinpoint the active interpreter & venv | `pytangle status` |
-| 🗺️ | **Interactive dependency graph** — health-coloured HTML network | `pytangle map` |
-| 🔒 | **Security scanning** — known CVEs via the OSV database | `pytangle check` |
-| ♻️ | **Outdated / yanked detection** — via the PyPI JSON API | `pytangle check` |
-| 🛠️ | **Auto-fix suggestions** — constraint-solved upgrade/downgrade paths | `pytangle suggest` |
+| 🩺 | **Environment diagnostics** — pinpoint the active interpreter & venv | `deptangle status` |
+| 🗺️ | **Interactive dependency graph** — health-coloured HTML network | `deptangle map` |
+| 🔒 | **Security scanning** — known CVEs via the OSV database | `deptangle check` |
+| ♻️ | **Outdated / yanked detection** — via the PyPI JSON API | `deptangle check` |
+| 🛠️ | **Auto-fix suggestions** — constraint-solved upgrade/downgrade paths | `deptangle suggest` |
 | 📦 | **Lockfile support** — `uv.lock`, `poetry.lock`, `Pipfile.lock` | all commands |
 
 ---
@@ -69,14 +69,14 @@ Color legend in the graph and tables:
 
 ## 🔐 Security by design
 
-PyTangle reads untrusted inputs (lockfiles, package metadata, remote APIs) and
+deptangle reads untrusted inputs (lockfiles, package metadata, remote APIs) and
 shells out to `uv`, so it is hardened from the ground up. See [`SECURITY.md`](SECURITY.md).
 
 - **No code execution** — lockfiles are parsed as data (`tomllib`/`json`); package code is never imported or `eval`'d.
 - **Hardened subprocess** — `shell=False`, list-args only, resolved executables, timeouts, scrubbed environment.
 - **SSRF-resistant networking** — HTTPS-only to an explicit host allowlist (`pypi.org`, `api.osv.dev`), redirects disabled, IP literals rejected, response size capped, timeouts enforced.
 - **Injection-safe output** — package names/versions validated (PEP 508/440) and HTML-escaped before entering the graph; Pyvis JS served locally, not from a CDN.
-- **PyTangle never modifies your environment** — `suggest` only *prints* commands for you to review and run.
+- **deptangle never modifies your environment** — `suggest` only *prints* commands for you to review and run.
 
 ---
 
@@ -101,8 +101,8 @@ src/pytangle/
 ## 🧑‍💻 Development
 
 ```bash
-git clone https://github.com/Solanki-Prem/pytangle
-cd pytangle
+git clone https://github.com/Solanki-Prem/deptangle
+cd deptangle
 uv venv && source .venv/bin/activate
 uv pip install -e ".[dev]"
 
@@ -115,7 +115,7 @@ pytest --cov=pytangle      # tests
 
 ## 🗺️ Roadmap
 
-- `pytangle fix --apply` — execute suggested fixes automatically (with confirmation)
+- `deptangle fix --apply` — execute suggested fixes automatically (with confirmation)
 - A GitHub Action that fails CI when a new CVE is introduced
 
 ---
