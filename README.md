@@ -36,11 +36,6 @@ uv tool install deptangle
 # or with pip
 pip install deptangle
 ```
-
-> Installs the `deptangle` command. (The import package is still `pytangle`
-> internally; the PyPI distribution and CLI are named `deptangle` because
-> `pytangle` was already taken on PyPI.)
-
 ## 🧪 Usage
 
 ```bash
