@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# PyTangle generated artifacts
+*.pytangle.html
+pytangle-graph*.html
+lib/         # pyvis copies its JS assets here when cdn_resources="local"
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Secrets — never commit
+.env
+*.pem
+*.key
