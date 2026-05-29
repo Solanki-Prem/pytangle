@@ -31,11 +31,14 @@ by [`uv`](https://github.com/astral-sh/uv) for speed.
 
 ```bash
 # with uv (recommended)
-uv tool install pytangle
+uv tool install deptangle
 
 # or with pip
-pip install pytangle
+pip install deptangle
 ```
+
+> Installs the `pytangle` command. (The PyPI distribution is named
+> `deptangle` because `pytangle` was already taken.)
 
 ## 🧪 Usage
 

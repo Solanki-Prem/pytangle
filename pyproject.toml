@@ -3,7 +3,8 @@ requires = ["hatchling>=1.21"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pytangle"
+# PyPI distribution name (the import package & CLI command remain `pytangle`).
+name = "deptangle"
 dynamic = ["version"]
 description = "The lightning-fast, visual dependency detective that untangles and fixes your Python environments."
 readme = "README.md"
