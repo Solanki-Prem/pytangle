@@ -13,7 +13,7 @@ from pytangle import __version__, checker, environment, parser, report, resolver
 from pytangle.parser import DependencyGraph
 
 app = typer.Typer(
-    name="pytangle",
+    name="deptangle",
     help="The lightning-fast, visual dependency detective for Python environments.",
     add_completion=True,
     no_args_is_help=True,
@@ -25,7 +25,7 @@ err_console = Console(stderr=True)
 
 def _version_callback(value: bool) -> None:
     if value:
-        console.print(f"pytangle {__version__}")
+        console.print(f"deptangle {__version__}")
         raise typer.Exit()
 
 
@@ -163,7 +163,7 @@ def check(
     if n_vuln:
         console.print(f"[bold red]✗ {n_vuln} vulnerable package(s).[/]")
     if conflicts or n_vuln:
-        console.print("[dim]Run [bold]pytangle suggest[/] for fixes.[/]")
+        console.print("[dim]Run [bold]deptangle suggest[/] for fixes.[/]")
         raise typer.Exit(code=1)
     console.print("[green]✓ No conflicts or known vulnerabilities.[/]")
 

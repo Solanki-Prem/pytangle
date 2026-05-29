@@ -37,28 +37,29 @@ uv tool install deptangle
 pip install deptangle
 ```
 
-> Installs the `pytangle` command. (The PyPI distribution is named
-> `deptangle` because `pytangle` was already taken.)
+> Installs the `deptangle` command. (The import package is still `pytangle`
+> internally; the PyPI distribution and CLI are named `deptangle` because
+> `pytangle` was already taken on PyPI.)
 
 ## 🧪 Usage
 
 ```bash
 # 1. Diagnose your environment
-pytangle status
+deptangle status
 
 # 2. Visualise the dependency graph (writes an interactive HTML file)
-pytangle map -o graph.html
+deptangle map -o graph.html
 
 # 3. Check for conflicts, outdated packages, and CVEs
-pytangle check
-pytangle check --only-issues          # show only problems
-pytangle check --offline              # no network calls
+deptangle check
+deptangle check --only-issues          # show only problems
+deptangle check --offline              # no network calls
 
 # 4. Get actionable fix commands
-pytangle suggest
+deptangle suggest
 
 # Work from a lockfile instead of the live environment
-pytangle check --lockfile uv.lock
+deptangle check --lockfile uv.lock
 ```
 
 Color legend in the graph and tables:

@@ -38,4 +38,4 @@ def test_check_offline(tmp_path):
 def test_help():
     result = runner.invoke(app, ["--help"])
     assert result.exit_code == 0
-    assert "pytangle" in result.stdout.lower()
+    assert "deptangle" in result.stdout.lower()

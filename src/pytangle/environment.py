@@ -92,7 +92,7 @@ def render(info: EnvironmentInfo) -> Panel:
 
     return Panel(
         table,
-        title="[bold]PyTangle · Environment[/]",
+        title="[bold]deptangle · Environment[/]",
         border_style="cyan",
         expand=False,
     )

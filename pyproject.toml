@@ -58,7 +58,7 @@ Repository = "https://github.com/Solanki-Prem/pytangle"
 Issues = "https://github.com/Solanki-Prem/pytangle/issues"
 
 [project.scripts]
-pytangle = "pytangle.cli:app"
+deptangle = "pytangle.cli:app"
 
 [tool.hatch.version]
 path = "src/pytangle/__about__.py"
